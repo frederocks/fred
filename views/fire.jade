@@ -1,0 +1,339 @@
+extends layout
+
+block content
+	br 
+
+	.container
+		.row
+			.col-md-2
+				.navbar-default.sidebar(role='navigation')
+					.sidebar-nav.navbar-collapse
+						ul#side-menu.nav
+							li.sidebar-search
+								.input-group.custom-search-form
+									input.form-control(type='text', placeholder='Search...')
+									span.input-group-btn
+										button.btn.btn-default(type='button')
+											i.fa.fa-search
+						.col-md-3
+							.checkbox
+								label
+									input(type='checkbox', value='')
+									| Running
+							.checkbox
+								label
+									input(type='checkbox', value='')
+									| Biking
+							.checkbox.disabled
+								label
+									input(type='checkbox', value='', disabled='')
+									| Yoga
+						.col-md-1.col-md-offset-3
+							.checkbox
+								label
+									input(type='checkbox', value='')
+									| Group
+							.checkbox
+								label
+									input(type='checkbox', value='')
+									| Kid
+							.checkbox.disabled
+								label
+									input(type='checkbox', value='', disabled='')
+									| Family
+			.col-md-9.col-xs-offset-3
+				#Carousel.carousel.slide
+					ol.carousel-indicators
+						li.active(data-target='#Carousel', data-slide-to='0')
+						li(data-target='#Carousel', data-slide-to='1')
+						li(data-target='#Carousel', data-slide-to='2')
+					.carousel-inner
+						.item.active
+							.row
+								.col-md-3
+									h3
+									#demo
+									li
+										a(href='forms.html')
+											i.fa.fa-edit.fa-fw
+											|  Forms
+									li
+										a(href='#')
+											i.fa.fa-wrench.fa-fw
+											|  UI Elements
+											span.fa.arrow
+									li
+										| This is and
+									ul
+										li | adflkj
+										li | aldk
+								script(type='text/javascript').
+									var d = new Date();
+									var div = document.getElementById("demo");
+									div.textContent = d.toDateString(); 
+									//var n = d.getDate();
+									//document.getElementById("demo").innerHTML = d;
+													
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+						.item
+							.row
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+						.item
+							.row
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+					a.left.carousel-control(data-slide='prev', href='#Carousel') ‹
+					a.right.carousel-control(data-slide='next', href='#Carousel') ›
+				// .Carousel
+			p
+				dl.dl-horizontal
+					dt
+						code
+							script.
+								</code> JavaScript <small>(jQuery)</small> Code</dt>
+								<dd>this is the write-up for the <b><em>JavaScript</em></b> that allows the <code>.nav-carousel</code> and <code>.carousel-indicator</code>to work when you click them. also, they will set <code>.active</code> state when <b>slid</b> to or <b>clicked</b>.<br>
+								<pre class="pre-scrollable"><code type="text/javascript"><script type="text/javascript">
+								$(document).ready(function()
+								{
+								$('#thumbCarousel').carousel({
+								interval: 3000
+								})
+								});
+								/* affix the Carousel Buttons to Carousel Item on scroll */
+								$('.nav-carousel').bind({
+								offset:
+								{
+								top: $('#thumbCarousel').height()-$('.nav-carousel').height()
+								}
+								});
+								$(document).ready( function()
+								{
+								var carouselContainer = $('.carousel');
+								var slideInterval = 2500;
+								$('#carousel').carousel({
+								interval:   slideInterval
+								});
+								var clickEvent = false;
+								$('#thumbCarousel').on('click', '.nav-carousel a', function() {
+								clickEvent = true;
+								$('.nav-carousel li').removeClass('active');
+								$(this).parent().addClass('active');
+								}).on('slid.bs.carousel', function(e)
+								{
+								if(!clickEvent)
+								{
+								var count = $('.nav-carousel').children().length -1;
+								var current = $('.nav-carousel li.active');
+								current.removeClass('active').next().addClass('active');
+								var id = parseInt(current.data('slide-to'));
+								if(count == id)
+								{
+								$('.nav-carousel li').first().addClass('active');
+								}
+								}
+								clickEvent = false;
+								});
+								});
+								$(document).ready(function()
+								{
+								$('.slide1, .slide2, .slide3').hover(function()
+								{
+								$(this).find('.caption').delay(200).slideDown(350);
+								},
+								function()
+								{
+								$(this).find('.caption').delay(200).slideUp(350);
+								});
+								$('.fade1, .fade2').hover(
+								function(){
+								$(this).find('.caption').delay(200).fadeIn(350);
+								},
+								function(){
+								$(this).find('.caption').delay(200).fadeOut(350);
+								}
+								);
+								});
+								$('.carousel .item').each(function()
+								{
+								var next = $(this).next();
+								if(!next.length)
+								{
+								next = $(this).siblings(':first');
+								}
+								next.children(':first-child').clone().appendTo($(this));
+								for(var i=0;i<2;i++)
+								{
+								next=next.next();
+								if (!next.length)
+								{
+								next = $(this).siblings(':first');
+								}
+								next.children(':first-child').clone().appendTo($(this));
+								}
+								});
+	
+	
+	script(src='//soldierupdesigns.com/js/jquery-ui.min.js')
+	script(type='text/javascript').
+		$('.carousel .item').each(function()
+		{
+		var next = $(this).next();
+		if(!next.length)
+		{
+		next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().appendTo($(this));
+		for(var i=0;i<2;i++)
+		{
+		next=next.next();
+		if (!next.length)
+		{
+		next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().appendTo($(this));
+		}
+		});
+		$(document).ready(function()
+		{
+			$('#thumbCarousel').carousel({
+			interval: 3000
+		})
+		});
+
+		/* affix the Carousel Buttons to Carousel Item on scroll */
+		$('.nav-carousel').bind({
+		offset:
+		{
+			top: $('#thumbCarousel').height()-$('.nav-carousel').height()
+		}
+		});
+
+		$(document).ready( function()
+		{
+		var carouselContainer = $('.carousel');
+		var slideInterval = 2500;
+		
+		$('#carousel').carousel({
+			interval:   slideInterval
+		});
+		
+		var clickEvent = false;
+		$('#thumbCarousel').on('click', '.nav-carousel a', function() {
+				clickEvent = true;
+				$('.nav-carousel li').removeClass('active');
+				$(this).parent().addClass('active');	
+		}).on('slid.bs.carousel', function(e)
+		{
+			if(!clickEvent)
+			{
+				var count = $('.nav-carousel').children().length -1;
+				var current = $('.nav-carousel li.active');
+				current.removeClass('active').next().addClass('active');
+				var id = parseInt(current.data('slide-to'));
+				if(count == id)
+				{
+					$('.nav-carousel li').first().addClass('active');	
+				}
+			}
+			clickEvent = false;
+		});
+		});
+
+		$(document).ready(function()
+		{
+
+		$('.slide1, .slide2, .slide3').hover(function()
+		{
+			$(this).find('.caption').delay(200).slideDown(350);
+		},
+		function()
+		{
+			$(this).find('.caption').delay(200).slideUp(350);
+		});
+		
+		$('.fade1, .fade2').hover(
+			function(){
+				$(this).find('.caption').delay(200).fadeIn(350);
+			},
+			function(){
+				$(this).find('.caption').delay(200).fadeOut(350);
+			}
+		);
+		});
+	style.
+		#map-canvas {
+		height: 400px;
+		margin: 0px;
+		padding: 0px
+		}
+	script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places")
+	script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places')
+	script.
+		var map;
+		var infowindow;
+		function initialize() {
+		var pyrmont = new google.maps.LatLng(38.657, -90.294);
+		map = new google.maps.Map(document.getElementById('map-canvas'), {
+		center: pyrmont,
+		zoom: 12
+		});
+		var request = {
+		location: pyrmont,
+		radius: 10000,
+		query: ['bike']
+		};
+		infowindow = new google.maps.InfoWindow();
+		var service = new google.maps.places.PlacesService(map);
+		service.textSearch(request, callback);
+		}
+		function callback(results, status) {
+		if (status == google.maps.places.PlacesServiceStatus.OK) {
+		for (var i = 0; i < results.length; i++) {
+		var place = results[i];
+		createMarker(results[i]);
+		}
+		}
+		}
+		function createMarker(place) {
+		var placeLoc = place.geometry.location;
+		var marker = new google.maps.Marker({
+		map: map,
+		position: place.geometry.location
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(place.name);
+		infowindow.open(map, this);
+		});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	.container-fluid
+		#map-canvas

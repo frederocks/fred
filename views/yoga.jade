@@ -1,0 +1,204 @@
+extends layout
+
+block content
+	// Header
+	header#header1
+	.container
+		.table
+			//.container(style={position:'relative',left:'20%'})  
+			//.row(style={height:'500px',width:'60%',display:'table',position:'relative',left:'20%'})
+			.row
+				.row-height
+					.col-xs-12.col-sm-4.col-sm-height
+						.box.highlight
+						.inside.inside-full-height
+							a(href='#', style='color: #fff')
+								.panel.panel-default(style='background-color: #000')
+									.panel-body
+									img(src='img/6classroom.jpg', class="img-thumbnail")
+									|  Yoga 6
+					.col-xs-12.col-sm-4.col-sm-height
+						.box.highlight
+						.inside.inside-full-height
+							a(href='#', style='color: #fff')
+								.panel.panel-default(style='background-color: #00abf0')
+									.panel-body
+									img(src='img/pranaclassroom.jpg', class="img-thumbnail")
+									|  Southtown Yoga
+					.col-xs-12.col-sm-4.col-sm-height
+						.box.highlight
+						.inside.inside-full-height
+							a(href='#', style='color: #fff')
+								.panel.panel-default(style='background-color: #3b5998')
+									.panel-body
+									img(src='img/bg_home_3.jpg', class="img-thumbnail")
+									|  Urban Breath
+	section.wrapper.style1
+		.container
+			.row(class='200%')
+				.col-xs-12.col-sm-4.panel
+					.box.highlight
+						i.icon.major.fa-paper-plane
+						h3 This Is Important
+						p
+							| Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+				.col-xs-12.col-sm-4.panel
+					.box.highlight
+						i.icon.major.fa-pencil
+						h3 Also Important
+						p
+						| Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+				.col-xs-12.col-sm-4.panel
+					.box.highlight
+						i.icon.major.fa-wrench
+						h3 Probably Important
+						p
+						| Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+	.control-group(
+	  ng-form
+	  name='emailGroup'
+	  ng-class='{"ng-error": emailGroup.$invalid}'
+	)
+		label.control-label Email
+		.controls
+		input(
+		  type='email'
+		  ng-model='user.email'
+		  required
+		  placeholder='you@example.com'
+		  focus-on='focusEmail'
+		)						
+.container		
+	.row
+			section.6u(class='12u(narrower)')
+				h3 Get In Touch
+				form
+					.row(class='50%')
+						.6u(class='12u(mobilep)')
+							input#name(type='text', name='name', placeholder='Name')
+						.6u(class='12u(mobilep)')
+							input#email(type='email', name='email', placeholder='Email')
+					.row(class='50%')
+						.12u
+							textarea#message(name='message', placeholder='Message', rows='5')
+					.row(class='50%')
+						.12u
+							ul.actions
+								li
+									input.button.alt(type='submit', value='Send Message')
+
+		//- //.container(style={position:'relative',left:'20%'})  
+		//- //.row(style={height:'500px',width:'60%',display:'table',position:'relative',left:'20%'})
+		//- .wrapper		
+		//- 	.container
+		//- 		.row(class='200%')
+		//- 			.col-xs-12.col-sm-4
+		//- 				a(href='#', style='color: #fff')
+		//- 					.box.highlight
+		//- 						.panel.panel-default(style='background-color: #000')
+									
+		//- 							img(src='img/6classroom.jpg', class="img-responsive1")
+		//- 							|  Yoga 6
+		//- 			.col-xs-12.col-sm-4.panel
+		//- 				a(href='#', style='color: #fff')
+		//- 					.box.highlight
+		//- 					.panel.panel-default(style='background-color: #00abf0')
+		//- 						//.panel-body
+		//- 						img(src='img/pranaclassroom.jpg', class="img-responsive1")
+		//- 						|  Southtown Yoga
+		//- 			.col-xs-12.col-sm-4.panel
+		//- 				a(href='#', style='color: #fff')
+		//- 					.box.highlight
+		//- 					.panel.panel-default(style='background-color: #3b5998')
+		//- 						//.panel-body
+		//- 						img(src='img/urbanclassroom.jpg', class="img-responsive1")
+		//- 						|  Urban Breath
+		//- -var    maxCols = 12;
+	//- -var    col = 3;
+
+	//- div(ng-controller='ImgCtrl')
+	//- 	div(id="wrap")
+	//- 		div(id="header")
+	//- 			img(src="img/6classroom.jpg", height="60px")
+	//- 		div(id="main_full")
+	//- 			div.container
+	//- 				div.row
+	//- 					-for (var i = 0; i < (12 / col); i++)
+	//- 							div(class="span3", id="id")
+	//- 								p
+	//- 									a(href="#")
+	//- 										img(src='img/6classroom.jpg')
+	//- #page-wrapper
+	//- 	// Header
+	//- 	#header
+	//- 		// Logo
+	//- 		h1
+	//- 			a#logo(href='index.html')
+	//- 				| Arcana 
+	//- 				em by HTML5 UP
+	//- 		// Nav
+	//- 		nav#nav
+	//- 			ul
+	//- 				li
+	//- 					a(href='index.html') Home
+	//- 				li
+	//- 					a(href='#') Dropdown
+	//- 					ul
+	//- 						li
+	//- 							a(href='#') Lorem dolor
+	//- 						li
+	//- 							a(href='#') Magna phasellus
+	//- 						li
+	//- 							a(href='#') Etiam sed tempus
+	//- 						li
+	//- 							a(href='#') Submenu
+	//- 							ul
+	//- 								li
+	//- 									a(href='#') Lorem dolor
+	//- 								li
+	//- 									a(href='#') Phasellus magna
+	//- 								li
+	//- 									a(href='#') Magna phasellus
+	//- 								li
+	//- 									a(href='#') Etiam nisl
+	//- 								li
+	//- 									a(href='#') Veroeros feugiat
+	//- 						li
+	//- 							a(href='#') Veroeros feugiat
+	//- 				li.current
+	//- 					a(href='left-sidebar.html') Left Sidebar
+	//- 				li
+	//- 					a(href='right-sidebar.html') Right Sidebar
+	//- 				li
+	//- 					a(href='two-sidebar.html') Two Sidebar
+	//- 				li
+	//- 					a(href='no-sidebar.html') No Sidebar
+	//- // Main
+	//- section.wrapper.style1
+	//- 	.container
+	//- 		.row(class='200%')
+	//- 			.4u(class='12u(narrower)')
+	//- 				#sidebar
+	//- 					// Sidebar
+	//- 					section
+	//- 						h3 Just a Subheading
+	//- 						p
+	//- 							| Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
+	//- 							| Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
+	//- 							| Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis et nisi etiam.
+							
+	//- 					section
+	//- 						h3 Another Subheading
+	//- 							ul.links
+	//- 								li
+	//- 									a(href='#') Amet turpis, feugiat et sit amet
+	//- 								li
+	//- 									a(href='#') Ornare in hendrerit in lectus
+	//- 								li
+	//- 									a(href='#') Semper mod quis eget mi dolore
+	//- 								li
+	//- 									a(href='#') Consequat etiam lorem phasellus
+	//- 								li
+	//- 									a(href='#') Amet turpis, feugiat et sit amet
+	//- 								li
+	//- 									a(href='#') Semper mod quisturpis nisi

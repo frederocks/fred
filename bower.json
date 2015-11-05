@@ -1,0 +1,24 @@
+{
+        "name": "inferno",
+        "version": "0.0.1",
+        "homepage": "www.frederocks.us",
+        "authors": [
+                "Lucas frederocks <frederocks@me.com>"
+        ],
+        "description": "Bower packages for FE",
+        "main": "index.html",
+        "license": "MIT",
+        "ignore": [
+                "**/.*",
+                "node_modules",
+                "bower_components",
+                "test",
+                "tests"
+        ],
+        "dependencies": {
+                "angular": "latest",
+                "bootstrap": "latest",
+                "moment": "latest",
+                        "angular-route": "latest"
+        }
+}

@@ -1,0 +1,276 @@
+extends layout
+
+block content
+	br 
+
+	.container
+		.row
+			.col-md-2
+				.navbar-default.sidebar(role='navigation')
+					.sidebar-nav.navbar-collapse
+						ul#side-menu.nav
+							li.sidebar-search
+								.input-group.custom-search-form
+									input.form-control(type='text', placeholder='Search...')
+									span.input-group-btn
+										button.btn.btn-default(type='button')
+											i.fa.fa-search
+							.col-md-3
+							form.form-horizontal(role='form', method='POST')
+								input(type='hidden', name='_csrf', value=_csrf)
+								.form-group
+									label(class='col-sm-2 control-label',for='userDistance3') Distance
+									.col-sm-8
+										input.form-control(type='number', name='userDistance3', id='userDistance3', value=2)
+								.form-group
+									.col-sm-offset-2.col-sm-8
+										button.btn.btn-primary(type='submit')
+											i.fa.fa-search
+											| Search
+			.col-md-9.col-xs-offset-3
+				#Carousel.carousel.slide
+					ol.carousel-indicators
+						li.active(data-target='#Carousel', data-slide-to='0')
+						li(data-target='#Carousel', data-slide-to='1')
+						li(data-target='#Carousel', data-slide-to='2')
+					.carousel-inner
+						.item.active
+							.row
+								.col-md-3
+									p
+										| #{doc[0].person.name} 
+										age
+										|	#{doc[0].distance}
+									#caro.carousel.slide(data-ride='carousel')
+										.carousel-inner
+											.item
+												//- each i in doc[0].person.photos
+												//- 	img(src= '#{i.url}', alt='Image', style='max-width:100%;')
+									a.left.carousel-control(href='#caro', role='button', data-slide='prev')
+										span.glyphicon.glyphicon-chevron-left
+									a.right.carousel-control(href='#caro', role='button', data-slide='next')
+										span.glyphicon.glyphicon-chevron-right
+									//- | #{doc[0].messages[1].message}													
+								.col-md-3
+									p
+										| #{doc[19].person.name} 
+										br 
+									a.thumbnail(href='#')
+										img(src= '#{doc[19].person.photos[1].url}', alt='Image', style='max-width:100%;')
+
+								.col-md-3
+									p
+										| #{doc[7].person.name} 
+										| #{doc[7].distance}
+										br 
+									a.thumbnail(href='#')
+										img(src= '#{doc[7].person.photos[0].url}', alt='Image', style='max-width:100%;')
+								.col-md-3
+									p
+										| #{doc[2].person.name} 
+										br 
+									a.thumbnail(href='#')
+										img(src= '#{doc[2].person.photos[2].url}', alt='Image', style='max-width:100%;')
+						.item
+							.row
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+								.col-md-3
+									a.thumbnail(href='#')
+										img(src='http://placehold.it/250x250', alt='Image', style='max-width:100%;')
+					a.left.carousel-control(data-slide='prev', href='#Carousel') ‹
+					a.right.carousel-control(data-slide='next', href='#Carousel') ›
+			.col-md-12
+				.item
+					.row
+			.col-md-12
+				.item
+					.row
+						each photo in doc1
+							.col-md-3
+								.row
+									.col-md-6
+										h4
+											|#{photo.person.name}
+									.col-md-2-offset-4
+										h5
+											|Distance: #{photo.distance} miles
+									//- .col-md-1-offset-2
+									//- 	h5
+									//- 		| #{photo.person.birth_date}
+								
+								#caro.carousel.slide(data-ride='carousel')
+									//- ol.carousel-indicators
+									//- 	li.active(data-target='#caro', data-slide-to='0')
+									//- 	li(data-target='#caro', data-slide-to='1')
+									//- 	li(data-target='#caro', data-slide-to='2')
+									.carousel-inner(role= 'listbox')
+										.item.active
+											img(src= '#{photo.person.photos[0].url}', alt='Image', style='max-width:100%;height: 250px')
+										- for (var x = 1; x < photo.person.photos.length; x++)
+											.item
+												img(src= '#{photo.person.photos[x].url}', alt='Image', style='max-width:100%;height: 250px')
+										//- each i in photo.person.photos 
+										//- 	.item
+										//- 		img(src= '#{i.url}', alt='Image', style='max-width:100%;height: 250px')
+									a.left.carousel-control(href='#caro', role='button', data-slide='prev')
+										span.glyphicon.glyphicon-chevron-left
+									a.right.carousel-control(href='#caro', role='button', data-slide='next')
+										span.glyphicon.glyphicon-chevron-right
+									//img(src= '#{photo.person.photos[0].url}', alt='#{photo.person.name}', style='max-width:100%; height: 250px')
+								.row
+									p
+										|Last activity #{photo.last_activity_date}
+								.row
+									p
+										//need to do this when passed the object
+									//- if (photo.messages[0].message)
+									//- 	|		#{photo.messages[0].message}
+	style.
+		#map-canvas {
+		height: 400px;
+		margin: 0px;
+		padding: 0px
+		}
+		#age{
+		position: 'absolute';
+		right: 0;
+		top: 0;
+		}
+		.center{
+		width: 150px;
+		margin: 40px auto;
+	
+		}
+		.spinner {
+		width: 100px;
+		}
+		.spinner input {
+			text-align: right;
+		}
+		.input-group-btn-vertical {
+			position: relative;
+			white-space: nowrap;
+			width: 1%;
+			vertical-align: middle;
+			display: table-cell;
+		}
+		.input-group-btn-vertical > .btn {
+			display: block;
+			float: none;
+			width: 100%;
+			max-width: 100%;
+			padding: 8px;
+			margin-left: -1px;
+			position: relative;
+			border-radius: 0;
+		}
+		.input-group-btn-vertical > .btn:first-child {
+			border-top-right-radius: 4px;
+		}
+		.input-group-btn-vertical > .btn:last-child {
+			margin-top: -2px;
+			border-bottom-right-radius: 4px;
+		}
+		.input-group-btn-vertical i{
+			position: absolute;
+			top: 0;
+			left: 4px;
+		}
+	
+	//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+	
+	//- script(type='text/javascript').
+	//- 	$('.carousel .item').each(function()
+	//- 	{
+	//- 	var next = $(this).next();
+	//- 	if(!next.length)
+	//- 	{
+	//- 	next = $(this).siblings(':first');
+	//- 	}
+	//- 	next.children(':first-child').clone().appendTo($(this));
+	//- 	for(var i=0;i<2;i++)
+	//- 	{
+	//- 	next=next.next();
+	//- 	if (!next.length)
+	//- 	{
+	//- 	next = $(this).siblings(':first');
+	//- 	}
+	//- 	next.children(':first-child').clone().appendTo($(this));
+	//- 	}
+	//- 	});
+	//- 	$(document).ready(function()
+	//- 	{
+	//- 		$('#thumbCarousel').carousel({
+	//- 		interval: 3000
+	//- 	})
+	//- 	});
+
+	//- 	/* affix the Carousel Buttons to Carousel Item on scroll */
+	//- 	$('.nav-carousel').bind({
+	//- 	offset:
+	//- 	{
+	//- 		top: $('#thumbCarousel').height()-$('.nav-carousel').height()
+	//- 	}
+	//- 	});
+
+	//- 	$(document).ready( function()
+	//- 	{
+	//- 	var carouselContainer = $('.carousel');
+	//- 	var slideInterval = 2500;
+		
+	//- 	$('#carousel').carousel({
+	//- 		interval:   slideInterval
+	//- 	});
+		
+	//- 	var clickEvent = false;
+	//- 	$('#thumbCarousel').on('click', '.nav-carousel a', function() {
+	//- 	clickEvent = true;
+	//- 	$('.nav-carousel li').removeClass('active');
+	//- 	$(this).parent().addClass('active');	
+	//- 	}).on('slid.bs.carousel', function(e)
+	//- 	{
+	//- 	if(!clickEvent)
+	//- 	{
+	//- 	var count = $('.nav-carousel').children().length -1;
+	//- 	var current = $('.nav-carousel li.active');
+	//- 	current.removeClass('active').next().addClass('active');
+	//- 	var id = parseInt(current.data('slide-to'));
+	//- 	if(count == id)
+	//- 	{
+	//- 	$('.nav-carousel li').first().addClass('active');	
+	//- 	}
+	//- 	}
+	//- 	clickEvent = false;
+	//- 	});
+	//- 	});
+
+	//- 	//- $(document).ready(function()
+	//- 	//- {
+
+	//- 	//- $('.slide1, .slide2, .slide3').hover(function()
+	//- 	//- {
+	//- 	//- 	$(this).find('.caption').delay(200).slideDown(350);
+	//- 	//- },
+	//- 	//- function()
+	//- 	//- {
+	//- 	//- 	$(this).find('.caption').delay(200).slideUp(350);
+	//- 	//- });
+		
+	//- 	//- $('.fade1, .fade2').hover(
+	//- 	//- 	function(){
+	//- 	//- 		$(this).find('.caption').delay(200).fadeIn(350);
+	//- 	//- 	},
+	//- 	//- 	function(){
+	//- 	//- 		$(this).find('.caption').delay(200).fadeOut(350);
+	//- 	//- 	}
+	//- 	//- );
+	//- 	//- });$('.carousel .item').each(function()
+

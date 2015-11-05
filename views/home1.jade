@@ -1,0 +1,76 @@
+extends layout
+
+block content  
+	// Header
+	//header#homeheader
+	a(name='earth')
+	.intro-header
+
+		.row
+			.col-lg-12
+				.intro-message
+					h1 Always Hear
+					//h3 More Aware
+				//- .span12
+				//- 	form#custom-search-form.form-search.form-horizontal.pull-right
+				//- 	.input-append.span12
+				//- 		input.search-query.mac-style(type='text', placeholder='Search')
+				//- 		button.btn.btn-default(type='submit') Submit
+				//- 			i.icon-search
+		br
+		br
+		br 
+		br
+		br
+		br
+		br
+		br
+		br
+		br
+		br
+		br
+		.row
+		.control-group(
+			ng-form
+			name='emailGroup'
+			ng-class='{"ng-error": emailGroup.$invalid}'
+		)
+			label.control-label Email
+			.controls
+			input(
+				type='email'
+				ng-model='user.email'
+				required
+				placeholder='you@example.com'
+				focus-on='focusEmail'
+			)
+			button.btn.btn-default(type='submit') Submit
+
+		.row
+			section.6u(class='12u(narrower)')
+				h3 Get In Touch
+				form
+					.row(class='50%')
+						.6u(class='12u(mobilep)')
+							input#name(type='text', name='name', placeholder='Name')
+						.6u(class='12u(mobilep)')
+							input#email(type='email', name='email', placeholder='Email')
+					.row(class='50%')
+						.12u
+							textarea#message(name='message', placeholder='Message', rows='5')
+						//- .row(class='40%')
+						.12u
+							ul.actions
+								li
+									input.button.alt(type='submit', value='Send Message')
+	script.
+		$('.text').hide().removeClass('text').addClass('text-js');
+
+		$('.thumb').hover(function(){
+		    $(this).find('.text-js').fadeToggle();
+		});
+	//- script.
+	//- 	var e = document.getElementById('earth');
+	//- 	e.onmouseover = function() {
+	//- 		e.textContent = "Earth";
+	//- 	}

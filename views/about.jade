@@ -1,0 +1,173 @@
+extends layout
+
+block content
+	//- br
+	//- br
+	//- br
+	//- .table
+	//- 	//.container(style={position:'relative',left:'20%'})  
+	//- 	//.row(style={height:'500px',width:'60%',display:'table',position:'relative',left:'20%'})
+	//- 	.row
+	//- 		.col-sm-6
+	//- 			a(href='/bikes', style='color: #fff')
+	//- 				.panel.panel-default(style='background-color: #61210B')
+	//- 					.panel-body
+	//- 						img(src='http://i.imgur.com/2K36Oo0.jpg', class="img-thumbnail")
+	//- 						|  Earth
+	//- 		.col-sm-6
+	//- 			a(href='/api/twitter', style='color: #fff')
+	//- 				.panel.panel-default(style='background-color: #0040FF')
+	//- 					.panel-body
+	//- 						img(src='http://i.imgur.com/ALh323B.jpg', class="img-thumbnail")
+	//- 						|  Water
+	//- 	.row					
+	//- 		.col-md-6
+	//- 			a(href='/swim', style='color: #fff')
+	//- 				.panel.panel-default(style='background-color: #FF0000')
+	//- 					.panel-body
+	//- 						img(src='http://i.imgur.com/SHKQgVK.jpg', class="img-thumbnail")
+	//- 						|  Fire
+	//- 		.col-md-6
+	//- 			a(href='/yoga', style='color: #fff')
+	//- 				.panel.panel-default(style='background-color: #F2F2F2')
+	//- 					.panel-body
+	//- 						img(src='http://i.imgur.com/836ypb7.jpg', class="img-thumbnail")
+	//- 						|  Air
+	
+	//- script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?v=3.exp')
+	//- .container-fluid#map(style='width: 500px; height: 400px;')
+	//- 	script(type='text/javascript').
+	//- 		var locations = [
+	//- 		['Bondi Beach', 38.690542, -90.274856, 4],
+	//- 		['Coogee Beach', 38.623036, -90.259052, 5],
+	//- 		['Cronulla Beach', 38.628249, -90.157507, 3],
+	//- 		['Manly Beach', 38.80010128657071, -90.28747820854187, 2],
+	//- 		['Maroubra Beach', 38.550198, -90.259302, 1]
+	//- 		];
+	//- 		var map = new google.maps.Map(document.getElementById('map'), {
+	//- 		zoom: 10,
+	//- 		center: new google.maps.LatLng(38.657, -90.294),
+	//- 		mapTypeId: google.maps.MapTypeId.ROADMAP
+	//- 		});
+	//- 		var infowindow = new google.maps.InfoWindow();
+	//- 		var marker, i;
+	//- 		for (i = 0; i < locations.length; i++) {
+	//- 		marker = new google.maps.Marker({
+	//- 		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	//- 		map: map
+	//- 		});
+	//- 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	//- 		return function() {
+	//- 		infowindow.setContent(locations[i][0]);
+	//- 		infowindow.open(map, marker);
+	//- 		}
+	//- 		})(marker, i));
+	//- 		}
+		//function initialize() {	
+		//- var locations = [
+		//- ['Bondi Beach', -38.890542, -90.274856, 4],
+		//- ['Coogee Beach', -38.923036, -90.259052, 5],
+		//- ['Cronulla Beach', -38.028249, -90.157507, 3],
+		//- ['Manly Beach', -38.80010128657071, -90.28747820854187, 2],
+		//- ['Maroubra Beach', -38.950198, -90.259302, 1]
+		//- ];
+		//- var map = new google.maps.Map(document.getElementById('map-canvas'), {
+		//- 	zoom: 10,
+		//- 	center: {lat: 38.657, lng: -90.294}, 
+		//- 	mapTypeId: google.maps.MapTypeId.HYBRID
+		//- });
+		//- var infowindow = new google.maps.InfoWindow();
+
+		//- var marker, i;
+
+		//- for (i = 0; i < locations.length; i++) {  
+		//- marker = new google.maps.Marker({
+		//- position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+		//- map: map
+		//- });
+		//- google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		//- return function() {
+		//- infowindow.setContent(locations[i][0]);
+		//- infowindow.open(map, marker);
+		//- }
+		//- })(marker, i));
+		//- }
+
+		//- //- var markers = [];
+		//- //- for (var i = 0; i < 100; i++) {
+		//- //-   var location = yourData.location[i];
+		//- //-   var latLng = new google.maps.LatLng(location.latitude,
+		//- //-       location.longitude);
+		//- //-   var marker = new google.maps.Marker({
+		//- //-     position: latLng
+		//- //-   });
+		//- //-   markers.push(marker);
+		//- //- }
+		//- //- var markerCluster = new MarkerClusterer(map, markers);
+		//- //}
+	//- .col-md-3(style={float:'none', display:'table-cell', verticalAlign:'top'}) 
+	//-   h2 Hiking
+	//-   p 
+	//-   //p
+	//-   a.btn.btn-primary(href='yourstl', role='button', style={position:'absolute',bottom:'10%'}) Your STL »
+	//- .col-md-3(style={float:'none', display:'table-cell', verticalAlign:'top'})
+	//-   //h2 Things to do
+	//-   h2 
+	//-   //p Donec id elit non mi podapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euimdod. Donec sed odio dui.
+	//-   //p
+	//-   a.btn.btn-success(href='about', role='button', style={position:'absolute',bottom:'15%'}) Things to do »
+	//- .col-md-3(style={float:'none', display:'table-cell', verticalAlign:'top'})
+	//-   h2 Get Out
+	//- .col-md-3
+	//-   h2 Biking
+	//- nav
+	//-   ul#DrpDwnMn0.menu
+	//-     li.menuItem
+	//-       a#gs2(href='http://tommyherbig.wix.com/outandaboutstl', target='_self', title='Home') Home
+	//-     li.menuItem
+	//-       a#iut(href='http://tommyherbig.wix.com/outandaboutstl#!works/c10g1', target='_self', title='Your St. Louis') Your St. Louis
+	//-       ul.subMenu
+	//-         li.menuItem
+	//-           a#12oq(href='http://tommyherbig.wix.com/outandaboutstl#!content-creativity/c380', target='_self', title='Content & Creativity') Content & Creativity
+	//-     li.menuItem
+	//-       a#1wzn(href='http://tommyherbig.wix.com/outandaboutstl#!services2/cvdy', target='_self', title='Things To Do In The Lou') Things To Do In The Lou
+	//-     li.menuItem
+	//-       a#43e(href='http://tommyherbig.wix.com/outandaboutstl#!get-outside/c1smf', target='_self', title='Get Outside') Get Outside
+	//-       ul.subMenu
+	//-         li.menuItem
+	//-           a#1li8(href='http://tommyherbig.wix.com/outandaboutstl#!hiking-camping/c232b', target='_self', title='Climbing') Climbing
+	//-         li.menuItem
+	//-           a#1dw5(href='http://tommyherbig.wix.com/outandaboutstl#!canoekayakraft/cozh', target='_self', title='Canoe/Kayak/Raft') Canoe/Kayak/Raft
+	//-         li.menuItem
+	//-           a#1s12(href='http://tommyherbig.wix.com/outandaboutstl#!about3/cf8g', target='_self', title='Biking') Biking
+	//-         li.menuItem
+	//-           a#tjy(href='http://tommyherbig.wix.com/outandaboutstl#!hikingtrail-running/cim5', target='_self', title='Hiking/Trail Running') Hiking/Trail Running
+	//-         li.menuItem
+	//-           a#4j3(href='http://tommyherbig.wix.com/outandaboutstl#!running/c109x', target='_self', title='Running') Running
+	//-     li.menuItem
+	//-       a#1ca5(href='http://tommyherbig.wix.com/outandaboutstl#!services2/c1alt', target='_self', title='Help Out') Help Out
+	//-       ul.subMenu
+	//-         li.menuItem
+	//-           a#11ao(href='http://tommyherbig.wix.com/outandaboutstl#!services1/c1dys', target='_self', title='Donate') Donate
+	
+	//-   iframe(src='http://shoutout.apps.wixapps.net/widget-new?instance=Irq0XZ-etUB9DyrfvrC9F0Se7siANbNdAD_4hq6JhcM.eyJpbnN0YW5jZUlkIjoiMTNkNjQ3MWMtZjI2Yy1kOTEzLWY4YjgtNmE3Y2YwNjMwNGI0Iiwic2lnbkRhdGUiOiIyMDE1LTA2LTE2VDAwOjAxOjA5LjM0MloiLCJkZW1vTW9kZSI6ZmFsc2V9&target=_top&width=350&compId=i8nsosws&viewMode=viewer-seo', width='350', scrolling='auto', frameborder='0')
+	//-     a#StBttn0-wo.Button(href='http://tommyherbig.wix.com/outandaboutstl#!services2/cvdy', target='_self') Things To Do
+	//-     a#StBttn1-1nb.Button(target='_self') Get Out
+	//-     a#StBttn0-lea.Button(href='http://tommyherbig.wix.com/outandaboutstl#!works/c10g1', target='_self') Your STL
+	//-     a#StBttn2-11hn.Button(href='http://tommyherbig.wix.com/outandaboutstl#!services2/c1alt', target='_self') Help Out
+	//-     #WPht3-geh.image(itemscope='', itemtype='http://schema.org/ImageObject')
+	//-     img(src='http://static.wixstatic.com/media/b2c0a7_19393c0334a0fb0ba23a2bf73398910a.png_srz_55_55_85_22_0.50_1.20_0.00_png_srz', alt='', title='', itemprop='contentURL', width='55', height='55')
+	//-   #WRchTxtg-8dr.Text
+	//-     h2.font_2 WHAT IS OUT AND ABOUT STL?
+	//-   span#FvGrdLn0-wtz
+	//-     // placeholder for component of data type=None
+	//-   #WRchTxth-13is.Text
+	//-     p.font_7 OUR MISSION:
+	//-     ul.font_7
+	//-       li
+	//-         p.font_7  
+	//-     p.font_7
+	//-       | To connect every child, adult and family to the outdoors with an easy to use, customized link to everything happening to greater empower outdoor community. Providing people with the tools to live happier healthier lives.
+	//-     p.font_7
+	//-       | This site was created to bring all of St. Louis to a simple to use easy to work platfrom. While bettinering not only the stl area but shaping the way for future generations with active lifestyle community. A soultion to feed your need of things todo an ways to stay active around the LOUOut and About STL Is made to connect the community to what great options our st. louis has to offer. This Not for Proft was formed to get more people outside and enjoying what nature and our St. Louis has to offer. It is made to get what you want in your outdoor St. Louis. It from people like you caring to make St. Louis A Better Place. Vote NOW!
+	//- 

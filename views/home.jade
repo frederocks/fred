@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  h1 Out and About
+  p.lead Empowering today's youth.
+  hr
+  //.table-bordered
+  .table
+  //.container(style={position:'relative',left:'20%'})  
+  .row(style={height:'500px',width:'60%',display:'table',position:'relative',left:'20%'})
+    .col-md-3.arch0(style={float:'none', display:'table-cell', verticalAlign:'top'})
+      h2
+      //p Donec id elit non mi porta gravida at eget metus. 
+      //p
+      a.btn.btn-primary(href='yourstl', role='button', style={position:'absolute',bottom:'10%'}) Your STL »
+    .col-md-3.arch1(style={float:'none', display:'table-cell', verticalAlign:'top'})
+      //h2 Things to do
+      h2 
+      //p Donec id elit non mi podapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euimdod. Donec sed odio dui.
+      //p
+      a.btn.btn-success(href='about', role='button', style={position:'absolute',bottom:'15%'}) Things to do »
+    .col-md-3.arch2(style={float:'none', display:'table-cell', verticalAlign:'top'})
+      //h2 Get Out
+      h2
+      //p Donec id elit non mi porta gravrsus commodo, tortor mm nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euimdod. Donec sed odio dui.
+      //p
+      a.btn.btn-danger(href='test', role='button', style={position:'absolute',bottom:'15%'}) Get Out »
+    .col-md-3.arch3(style={float:'none', display:'table-cell', verticalAlign:'top'})
+      //h2 Help Out
+      h2
+      //p Donec id elit non mi porta t amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      //p
+      a.btn.btn-warning(href='#', role='button', style={position:'absolute',bottom:'10%'}) Help Out »
+      #WRchTxth-13is.Text
+  .container-fluid    
+    h3 OUR MISSION:
+    ul.font_7
+     
+      p.font_7  
+        p.font_7
+          | To connect every child, adult and family to the outdoors with an easy to
+          | use, customized link to everything happening to greater empower outdoor community. Providing people with the tools to live happier healthier lives.
+        p.font_7
+          | This site was created to bring all of St. Louis to a simple to use easy to work 
+          |platfrom. While bettinering not only the stl area but shaping the way for future generations with active lifestyle community. A soultion to feed your need of things todo an ways to stay active around the LOUOut and About STL Is made to connect the community to what great options our 
+          |st. louis has to offer. This Not for Proft was formed to get more people outside and enjoying what nature and our St. Louis has to offer. It is made to get what you want in your outdoor St. Louis. It from people like you caring to make St. Louis A Better Place. Vote NOW!
+    h3 #{title}
+    
+    //- if !user
+    //-       li(class=title=='Login'?'active':undefined)
+    //-         a(href='/login') Login
+    //-       li(class=title=='Create Account'?'active':undefined)
+    //-         a(href='/signup') Create Account
+    //-     else

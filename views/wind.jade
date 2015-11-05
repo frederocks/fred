@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	br 
+
+	.container
+		.row
+			//- ul
+			//- 	each i in doc.length ? doc : ['there are no values']
+			//- 		img(src= '#{doc.person[i].photos[0].url}', alt='Image', style='max-width:100%;')
+			//- //each i in doc[1000].person.photos.length ? doc[1000] : ['there are no values']
+			//- - var n = 0;
+			//- ul 
+			//- 	while n < 10
+			//- 		li = n++
+			//- 		//each i in [0,1,2]
+			//- 		//img(src= '#{doc[n].person.photos[i].url}', alt='Image', style='max-width:100%;')
+				
+
+			ul
+				each n in [0,1,2] ? doc[4].person.photos[n].url : doc[4].person.photos[0].url
+					li
+						img(src= '#{doc[4].person.photos[n].url}', alt='Image', style='max-width:100%;')
+					
